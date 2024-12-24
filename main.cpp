@@ -113,6 +113,6 @@ int main()
 {
     std::cout << "bopi-tool public\n";
     std::cout << "MAKE SURE THE EXE IS IN THE 'Bopimo!' FOLDER!\n ";
-    std::cout << "1.custom asar(enter link)  2. Tenacity 5.0 asar 3.meowimo (bopimo cat edition)  4.Bopimo mod manager(exe and folder download)" << "\n";
+    std::cout << "1.custom asar(enter link)  2. Tenacity 5.0 asar 3.meowimo (bopimo cat edition)  4.Bopimo mod manager(credits:WindowsOnAMac)" << "\n";
     ok();
     }
