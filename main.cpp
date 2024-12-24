@@ -58,7 +58,7 @@ void ok() {
         int result = system(command.c_str());
 
         if (result == 0) {
-            std::cout << "File downloaded successfully!\n";
+            std::cout << "File downloaded successfully!(NOT WORKING ANYMORE)\n";
             ok();
         }
         else {
@@ -68,7 +68,7 @@ void ok() {
     }
 
     if (input == "4") {
-        std::string url = "https://file.io/zCbKN6JkSdgf";
+        std::string url = "https://download1321.mediafire.com/y5fr5pizztjgdCGETBYFOwJHGt3UVxyBUPWqgYZj8PB-A7zI2SJkYaoNWkjb3yApV_jgAdB5UVf1XucfYY4-Fg6wibdOLK03hgletTRWg5GZvqgBzKaQ7duxyaTbQPxPkaJ_DwqoeCWbiC98Y7Q8oswfHFgLeChch1K3IUldUo0R7g/iq5gpt1b7wqyvka/bopimo_client.exe";
         std::cout << "Downloading custom exe file...\n";
         std::string filePath = "Client/bopimo_client.exe";
 
@@ -77,7 +77,7 @@ void ok() {
 
         if (result == 0) {
             std::cout << "File downloaded successfully!\n";
-            std::string url = "https://file.io/hf0FHiuMC5Mr";
+            std::string url = "https://github.com/Nomaakip/bopi-tool/raw/refs/heads/main/Bopimo.dll";
             std::cout << "Downloading custom dll file...\n";
             std::string filePath = "Client/bopimo.dll";
 
