@@ -6,6 +6,9 @@
 #include <conio.h>
 #include <shellapi.h>
 #include <filesystem>
+#include <fstream>
+
+
 
 std::string input;
 std::string data;
@@ -17,7 +20,7 @@ void ok() {
         std::cout << "enter asar file url: ";
         std::cin >> url;
         std::cout << "Downloading custom asar file...\n";
-        std::string filePath = "launcher/resources/app.asar";
+        std::string filePath = "C:/Users/%USERNAME%/AppData/Roaming/bopimo!/launcher/resources/app.asar";
         std::string command = "curl -L " + url + " -o " + filePath;
         int result = system(command.c_str());
 
@@ -34,7 +37,7 @@ void ok() {
     if (input == "2") {
         std::string url = "https://files.catbox.moe/pv0q24.asar";
         std::cout << "Downloading custom asar file...\n";
-        std::string filePath = "launcher/resources/app.asar";
+        std::string filePath = "C:/Users/%USERNAME%/AppData/Roaming/bopimo!/launcher/resources/app.asar";
 
         std::string command = "curl -L " + url + " -o " + filePath;
         int result = system(command.c_str());
@@ -50,55 +53,55 @@ void ok() {
     }
 
     if (input == "3") {
-        std::string url = "https://file.io/PJN1sBWoP3VQ";
-        std::cout << "Downloading custom exe file...\n";
-        std::string filePath = "Client/bopimo_client.exe";
-
-        std::string command = "curl -L " + url + " -o " + filePath;
-        int result = system(command.c_str());
-
-        if (result == 0) {
-            std::cout << "File downloaded successfully!(NOT WORKING ANYMORE)\n";
-            ok();
-        }
-        else {
-            std::cerr << "error\n";
-            ok();
-        }
-    }
-
-    if (input == "4") {
-        std::string url = "https://download1321.mediafire.com/y5fr5pizztjgdCGETBYFOwJHGt3UVxyBUPWqgYZj8PB-A7zI2SJkYaoNWkjb3yApV_jgAdB5UVf1XucfYY4-Fg6wibdOLK03hgletTRWg5GZvqgBzKaQ7duxyaTbQPxPkaJ_DwqoeCWbiC98Y7Q8oswfHFgLeChch1K3IUldUo0R7g/iq5gpt1b7wqyvka/bopimo_client.exe";
-        std::cout << "Downloading custom exe file...\n";
-        std::string filePath = "Client/bopimo_client.exe";
+        std::string url = "https://github.com/Nomaakip/bopi-tool/raw/refs/heads/main/for-mod-loader-download-windowsonamac/GUMM_mod_loader.tscn";
+        std::cout << "Downloading the mod loader...\n";
+        std::string filePath = "C:/Users/%USERNAME%/AppData/Roaming/bopimo!/Client/GUMM_mod_loader.tscn";
 
         std::string command = "curl -L " + url + " -o " + filePath;
         int result = system(command.c_str());
 
         if (result == 0) {
             std::cout << "File downloaded successfully!\n";
-            std::string url = "https://github.com/Nomaakip/bopi-tool/raw/refs/heads/main/Bopimo.dll";
-            std::cout << "Downloading custom dll file...\n";
-            std::string filePath = "Client/bopimo.dll";
+            std::string url = "https://github.com/Nomaakip/bopi-tool/raw/refs/heads/main/for-mod-loader-download-windowsonamac/override.cfg";
+            std::cout << "Downloading override.cfg...\n";
+            std::string filePath = "C:/Users/%USERNAME%/AppData/Roaming/bopimo!/Client/override.cfg";
 
             std::string command = "curl -L " + url + " -o " + filePath;
             int result = system(command.c_str());
-
             if (result == 0) {
                 std::cout << "File downloaded successfully!\n";
-                std::wstring folderPath = L"client\\mods";
+                std::string url = "https://github.com/Nomaakip/bopi-tool/raw/refs/heads/main/for-mod-loader-download-windowsonamac/ModdedIcon.png";
+                std::cout << "Downloading custom bopimo logo...\n";
+                std::string filePath = "C:/Users/%USERNAME%/AppData/Roaming/bopimo!/Client/ModdedIcon.png";
 
-                if (CreateDirectory(folderPath.c_str(), NULL) || ERROR_ALREADY_EXISTS == GetLastError()) {
-                    std::cout << "Folder created successfully." << std::endl;
+                std::string command = "curl -L " + url + " -o " + filePath;
+                int result = system(command.c_str());
+
+                if (result == 0) {
+                    std::cout << "File downloaded successfully!\n";
+                    std::string url = "https://github.com/Nomaakip/bopi-tool/raw/refs/heads/main/for-mod-loader-download-windowsonamac/mods.zip";
+                    std::cout << "Downloading mods folder...\n";
+                    std::string filePath = "C:/Users/%USERNAME%/AppData/Roaming/bopimo!/Client/mods.zip";
+                    std::string command = "curl -L " + url + " -o " + filePath;
+                    int result = system(command.c_str());
+                    if (result == 0) {
+                        std::cout << "File downloaded successfully!\n";
+                        std::string url = "https://github.com/Nomaakip/bopi-tool/raw/refs/heads/main/for-mod-loader-download-windowsonamac/mods_config.JSON";
+                        std::cout << "Downloading mods_config.json..\n";
+                        std::string filePath = "C:/Users/%USERNAME%/AppData/Roaming/bopimo!/Client/settings/mods_config.json";
+                        std::string command = "curl -L " + url + " -o " + filePath;
+                        int result = system(command.c_str());
+                        if (result == 0) {
+                            std::cout << "File downloaded successfully!\n";
+                            std::cout << "NOTE: YOU NEED TO EXTRACT THE MODS FOLDER IN  '%appdata%/bopimo/client'. In the next few updates, the mods folder will automatically be extracted (note:i was lazy to use libzip)\n";
+                            ok();
+                        }
+                    }
                 }
                 else {
-                    std::cerr << "Failed to create folder. Error code: " << GetLastError() << std::endl;
+                    std::cout << "error\n";
+                    ok();
                 }
-                ok();
-            }
-            else {
-                std::cout << "error\n";
-                ok();
             }
         }
         else {
@@ -107,12 +110,46 @@ void ok() {
         }
     }
 
+    if (input == "update") {
+        std::cout << "Downloading the updater..\n";
+        std::string url = "https://github.com/Nomaakip/bopi-tool-updater/releases/download/dev/updater.bopi.tool.exe";
+        std::string filePath = "updater.exe";
+        std::string command = "curl -L " + url + " -o " + filePath;
+        int result = system(command.c_str());
+
+        if (result == 0) {
+            std::cout << "Updater downloaded successfully!\n";
+            std::system("updater.exe");
+            ok();
+        }
+        else {
+            std::cout << "error\n";
+            ok();
+        }
+    }
+
+    else {
+        std::cout << "'" + input + "' is invalid. please enter a valid  number.\n";
+        ok();
+    }
 }
 
 int main()
 {
-    std::cout << "bopi-tool public\n";
-    std::cout << "MAKE SURE THE EXE IS IN THE 'Bopimo!' FOLDER!\n ";
-    std::cout << "1.custom asar(enter link)  2. Tenacity 5.0 asar 3.meowimo (bopimo cat edition)  4.Bopimo mod manager(credits:WindowsOnAMac)" << "\n";
+    std::cout << R"(
+ __                                    __                   ___      
+/\ \                      __          /\ \__               /\_ \     
+\ \ \____    ___   _____ /\_\         \ \ ,_\   ___     ___\//\ \    
+ \ \ '__`\  / __`\/\ '__`\/\ \  _______\ \ \/  / __`\  / __`\\ \ \   
+  \ \ \L\ \/\ \L\ \ \ \L\ \ \ \/\______\\ \ \_/\ \L\ \/\ \L\ \\_\ \_ 
+   \ \_,__/\ \____/\ \ ,__/\ \_\/______/ \ \__\ \____/\ \____//\____\
+    \/___/  \/___/  \ \ \/  \/_/          \/__/\/___/  \/___/ \/____/
+                     \ \_\                                           
+                      \/_/                                           
+)" << "\n";
+    std::cout << "Welcome to bopi-tool b5\n";
+    std::cout << "1.custom asar(enter link)  2. Tenacity 5.0 asar   3.Bopimo mod manager(credits:WindowsOnAMac)" << "\n";
+    std::cout << "type 'update' to update to the latest version of bopi-tool.\n";
+    std::cout << "bopimo modding discord: discord.gg/DGhzzty39u\n";
     ok();
     }
